@@ -11,38 +11,35 @@
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/modernizr.custom.js"></script>
 	<script type="text/javascript" src="js/knockout-3.3.0.js"></script>
-	<style>
-	body {
-		font-size: 1em;
-		color: black;
-		background-color: #ffffff;
-	}
-	</style>
 </head>
 <body>
-	<h1>PDF Reader</h1>
-	<div id="pdfViewer">
-		<object data-docType="pdf" data-bind="attr:{'data': name}" type="application/pdf" width="100%" height="800px"/>
+	
+	<div data-bind="html: intro()">
+		
 	</div>
 		<nav id="bt-menu" class="bt-menu">
 				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 				<ul>
-					<li id='book01'><a href="#" getBook()>Book 1</a></li>
-					<li id='book02'><a href="#">Book 2</a></li>
-					<li id='book03'><a href="#">Book 3</a></li>
-					<li id='book04'><a href="#">Book 4</a></li>
+					<li><a href="atomicTheory.html">Book 1</a></li>
+					<li><a href="periodicTable.html">Book 2</a></li>
+					<li><a href="methods.html">Book 3</a></li>
+					<li><a href="solarSystem.html">Book 4</a></li>
 				</ul>
 				
 		</nav>
-
-	<script>
+		<script>
 		function ViewModel() {
 			var self = this;
-			self.name = 'books/atomicTheory.pdf';
+			self.intro = function() {
+				return '<center><h1>PDF Reader</h1><p>Click the "sandwich" icon to the left to display a list of books.</p><center>'
+			};
 		};
+
 		var viewModel = new ViewModel();
 		ko.applyBindings(viewModel);
-	</script>
+		</script>
+
+		
 
 		
 	<script src="js/classie.js"></script>
@@ -50,3 +47,5 @@
 
 </body>
 </html>
+
+
